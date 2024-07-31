@@ -45,7 +45,7 @@ function Navbar() {
         <a href="/course">Course</a>
       </li>
       <li>
-        <a>Contact</a>
+        <a href="/contact">Contact</a>
       </li>
       <li>
         <a>About</a>
@@ -55,13 +55,13 @@ function Navbar() {
   return (
     <>
       <div
-        className={` max-w-screen-2xl container mx-auto md:px-20 px-4 dark:bg-slate-800 dark:text-white fixed top-0 left-0 right-0 z-50 ${
+        className={`z-10 w-screen md:px-20 px-4 dark:bg-slate-800 dark:text-white fixed top-0 left-0 right-0 z-50${
           sticky
             ? "sticky-navbar shadow-md bg-base-200 dark:bg-slate-700 dark:text-white duration-300 transition-all ease-in-out"
             : ""
         }`}
       >
-        <div className="navbar ">
+        <div className="navbar">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -91,31 +91,19 @@ function Navbar() {
                 {navItems}
               </ul>
             </div>
-            <a className=" text-2xl font-bold cursor-pointer">bookStore</a>
+            <a className=" text-2xl font-bold cursor-pointer">Kitaab</a>
           </div>
           <div className="navbar-end space-x-3">
             <div className="navbar-center hidden lg:flex">
               <ul className="menu menu-horizontal px-1">{navItems}</ul>
             </div>
             <div className="hidden md:block">
-              <label className=" px-3 py-2 border rounded-md flex items-center gap-2">
+              <label className="border rounded-md flex items-center gap-2 dark:bg-slate-900">
                 <input
                   type="text"
-                  className="grow outline-none rounded-md px-1 dark:bg-slate-900 dark:text-white"
+                  className="px-5 py-2 grow outline-none rounded-md dark:text-white"
                   placeholder="Search"
                 />
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                  className="w-4 h-4 opacity-70"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
               </label>
             </div>
             <label className="swap swap-rotate">
