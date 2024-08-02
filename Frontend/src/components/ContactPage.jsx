@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useSearchParams } from "react-router-dom";
 
 function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -16,7 +17,6 @@ function ContactPage() {
     toast.success("Message Sent");
     axios
       .post(
-        // replace this with your own unique endpoint URL
         "http://localhost:4001/contact/message",
         {
           email: email.current.value,
@@ -40,6 +40,8 @@ function ContactPage() {
       // console.log(res.data.code);
     email.current.value = "";
     message.current.value = "";
+    let params = serializeFormQuery();
+    setSearchParams(params);
   }
 
   // if (error) {
